@@ -1,0 +1,358 @@
+<html><head></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">
+html {
+    font-size: 14px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+body {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #222;
+    background-color: #222;
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+  }
+  .dark {
+    color: #ededed;
+    background-color: #222;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid;
+  }
+  /* a:focus, a:hover {
+    box-shadow: inset 0 -8px 0 #c92b2b;
+  } */
+  p {
+    opacity: 1;
+    margin: 0 0 0.6rem 0;
+    transition: opacity 300ms ease-out;
+  }
+  p:hover {
+    opacity: 1;
+  }
+  .scene {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .actor {
+    font-size: 2.8rem;
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  .actor:last-of-type {
+    margin-bottom: 6rem;
+  }
+  .actor__content {
+    flex-grow: 1;
+  }
+  @keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .actor__content--typing::after {
+    content: '|';
+    animation: blink 500ms infinite;
+  }
+
+  .next-button {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    margin-left: calc(-12% - 50px);
+  }
+
+  /* Button Styling */
+
+  .portfolio-experiment a {
+    color: white;
+    padding: 0.7em calc(0.7em * 1.2);
+    display: inline-block;
+    border: 3px solid transparent;
+    position: relative;
+    font-size: 2.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+  }
+  .portfolio-experiment a .text {
+    font-family: 'Dosis', serif;
+    transform: translate3d(0, 0.7em, 0);
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  }
+  .portfolio-experiment a:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: calc(0.7em * 1.2);
+    right: calc(0.7em * 1.2);
+    height: 3px;
+    background: #ff6e00;
+    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+    transform-origin: left;
+  }
+  .portfolio-experiment .line {
+    position: absolute;
+    background: #ff6e00;
+  }
+  .portfolio-experiment .line.-right, .portfolio-experiment .line.-left {
+    width: 3px;
+    bottom: -3px;
+    top: -3px;
+    transform: scale3d(1, 0, 1);
+  }
+  .portfolio-experiment .line.-top, .portfolio-experiment .line.-bottom {
+    height: 3px;
+    left: -3px;
+    right: -3px;
+    transform: scale3d(0, 1, 1);
+  }
+  .portfolio-experiment .line.-right {
+    right: -3px;
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+    transform-origin: top;
+  }
+  .portfolio-experiment .line.-top {
+    top: -3px;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left;
+  }
+  .portfolio-experiment .line.-left {
+    left: -3px;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom;
+  }
+  .portfolio-experiment .line.-bottom {
+    bottom: -3px;
+    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+    transform-origin: right;
+  }
+  .portfolio-experiment a:hover .text,
+  .portfolio-experiment a:active .text {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  }
+  .portfolio-experiment a:hover:after,
+  .portfolio-experiment a:active:after {
+    transform: scale3d(0, 1, 1);
+    right: -3px;
+    left: -3px;
+    transform-origin: right;
+    transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+  }
+  .portfolio-experiment a:hover .line,
+  .portfolio-experiment a:active .line {
+    transform: scale3d(1, 1, 1);
+  }
+  .portfolio-experiment a:hover .line.-right,
+  .portfolio-experiment a:active .line.-right {
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+    transform-origin: bottom;
+  }
+  .portfolio-experiment a:hover .line.-top,
+  .portfolio-experiment a:active .line.-top {
+    transition: transform 0.08s linear 0.4s;
+    transform-origin: right;
+  }
+  .portfolio-experiment a:hover .line.-left,
+  .portfolio-experiment a:active .line.-left {
+    transition: transform 0.08s linear 0.48s;
+    transform-origin: top;
+  }
+  .portfolio-experiment a:hover .line.-bottom,
+  .portfolio-experiment a:active .line.-bottom {
+    transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+    transform-origin: left;
+  }
+
+  .selected-col a {
+    color: #ff6e00;
+    padding: 0.7em calc(0.7em * 1.2);
+    display: inline-block;
+    border: 3px solid transparent;
+    position: relative;
+    font-size: 2.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+  }
+  .selected-col .line {
+    position: absolute;
+    background: white;
+  }
+
+  .selected-col a:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: calc(0.7em * 1.2);
+    right: calc(0.7em * 1.2);
+    height: 3px;
+    background: white;
+    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+    transform-origin: left;
+  }
+
+  /* Column and Row Structure */
+  /* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+
+.column-two {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.animate-in {
+  -webkit-animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s ease-in;
+}
+.animate-out {
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  opacity: 0;
+}
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* right bounce */
+@-webkit-keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  60% {
+    -webkit-transform: translateX(-15px);
+    transform: translateX(-15px);
+  }
+}
+@-moz-keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-30px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+}
+@keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+  60% {
+    -ms-transform: translateX(-15px);
+    transform: translateX(-15px);
+  }
+}
+/* /right bounce */
+
+
+/* assign bounce */
+.fa-arrow-right {
+  -webkit-animation: bounceRight 2s infinite;
+  animation: bounceRight 2s infinite;
+  float:right;
+  margin-top:16px;
+  margin-left:28px;
+}
+
+#next-button-one, #cod-desc, #next-button-two, #cwl-desc, #landing-options, #sd, #hp, #ctf {
+  opacity: 0;
+  transition: opacity 1.5s; 
+}
+
+#next-button-one.fade, #cod-desc.fade, #next-button-two.fade, #cwl-desc.fade, #landing-options.fade, #sd.fade, #hp.fade, #ctf.fade {
+  opacity: 1;
+}
+
+#wic-actor {
+  text-align: center;
+  /* margin-top: 15vh; */
+}
+
+#title-entrance{
+  text-align: center;
+  margin-top: 15vh;
+}
+
+#landing-svg {
+  max-width: 70em;
+  display: block;
+  margin: auto;
+  margin-top: 15vh;
+}
+#landing-svg .title-path {
+    stroke: white;
+    fill: white;
+    fill-opacity: 0;
+    stroke-width: 2;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation: draw 5s forwards ease-in-out;
+  }
+
+#landing-svg .title-path-highlight {
+    stroke: #ff6e00;
+    fill: #ff6e00;
+    fill-opacity: 0;
+    stroke-width: 2;
+    stroke-dasharray: 870;
+    stroke-dashoffset: 870;
+    animation: draw 5s forwards ease-in-out;
+  }
+
+  @-webkit-keyframes draw{
+        0%  {stroke-dashoffset:870;}
+        90%{stroke-dashoffset:200;fill-opacity:0.9;}
+        100%{stroke-dashoffset:0;fill-opacity:1;}
+    }
+    @-moz-keyframes draw{
+        0%  {stroke-dashoffset:870;}
+        90%{stroke-dashoffset:200;fill-opacity:0.9;}
+        100%{stroke-dashoffset:0;fill-opacity:1;}
+    }</pre></body></html>

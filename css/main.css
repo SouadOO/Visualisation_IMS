@@ -1,0 +1,404 @@
+CollegeScoreCardVis{
+	width: 1800px;
+	margin:auto;
+	background: transparent;
+	text-align: center;
+}
+
+html, body{
+		background-color: #222;
+    	transition: background-color 150ms ease-out, color 150ms ease-out;
+    	scroll-behavior: smooth;
+	    height: 100%;
+	    width: 100%;
+	    margin: 0;
+	    z-index: -100;
+	}
+	
+	.Header {
+	  position: fixed;
+	  height: 10%;
+	  width: 98%;
+	  top:2%;
+	  left: 3%;
+	  right: 0;
+	}
+	.Menu {
+	    float: right;
+	    width: 40%;
+	    right: 30%;
+	    top: 10%;
+	    font-size: 0.9em;
+	    font-weight: 300;
+	}
+	.Title{
+		float: left;
+		width: 30%;
+		height: 100%;
+		left: 5%;
+		top: 10%;
+		/*background-color: blue;*/
+	}
+	#BigTitle{
+		font-size: 24px;
+		font-size: 4vh;
+		color: #9ab;
+	}
+	#SmallTitle{
+		font-size: 16px;
+		font-size: 3vh;
+		color: #ff6e00;
+	}
+
+	.Filter{
+		float: left;
+		width: 0px;
+		height: 80%;
+		display: none;
+		top: 30%;
+		left: 0;
+		position: fixed;
+  	transition: 0.3s;
+    background-color: #222;
+	}
+	.Tab{
+		float:right;
+		width: 80%;
+		top:40%;
+		height: 60%;
+		margin-top: 4%;
+		/*background-color: grey;*/
+	}
+	.MySidebar{
+		float:right;
+		width: 0%;
+		height: 80%;
+		display: none;
+		top: 15%;
+		right: 0px;
+		left:82%;
+		position: absolute;
+  	transition: 0.3s;
+  	background-color: #ffffff06;
+  	font-family: 'Dosis', sans-serif;
+  	color:#FDF5E6;
+	}
+
+	.MySidebar h4{
+		font-family: 'Dosis', sans-serif;
+		font-size: 0.7rem;
+		text-align: center;
+		font-weight: bold;
+		margin:0px;
+		color: Beige;
+	}
+	.MySidebar h6{
+		font-family: 'Dosis', sans-serif;
+		font-size: 0.6rem;
+		text-align: left;
+		margin:0px;
+		margin-left: 10px;
+		font-weight: normal;
+		color:grey;
+	}
+	.MySidebar hr{
+		opacity: 0.1;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+
+
+
+	.Search{
+		right: 8%;
+		position: absolute; 
+		width: 15%;
+		height: 80%;
+		top: 10%;
+		/*background-color: grey;*/
+	}
+	.footer{
+		width: 75%;
+		height: 4%;
+		left:15%;
+		bottom: 1%;
+		position: absolute; 
+		/*background-color: green;*/
+	}
+
+	#filtrage{
+ 		position: fixed;
+ 		top: 50%;
+ 		left: 0;
+ 		visibility: initial; 
+ 		font-size: 20px;
+ 		color:#ff6e00 ;
+ 	}
+ 	#info{
+ 		position: absolute;
+ 	    top: 50%; 
+ 	    right: 2%;  
+ 	    visibility: initial; 
+ 	    font-size: 25px;
+ 	    color:#ff6e00 ;
+ 	}
+
+
+
+
+/*----------- Netwotk ----------------*/
+
+/*hierarchy layout*/
+.node {
+    font-family: 'Dosis', sans-serif;
+    font-size: 0.5rem;
+    font-weight: lighter;
+    fill: #ccc;
+}
+
+.node:hover {
+   font-size: 1rem;
+}
+
+.nodeClicked {
+   fill: #B8860B;
+   font-size: 1rem;
+   font-weight: bold;
+}
+
+.node--source,.node--target,.node--both{font-weight: bold;}
+.node--both   {fill: PaleVioletRed  ;}
+.node--target {fill: MediumSeaGreen ;}
+.node--source {fill: SkyBlue         ;}
+
+.link {
+    stroke: SlateGray ;
+    stroke-opacity: 0.5;
+    fill: none;
+    pointer-events: none;
+}
+
+.hidden{stroke-opacity: 0;}
+
+.link--both,
+.link--source,
+.link--target { stroke-opacity: 1;}
+.link--both   {stroke: PaleVioletRed  ;}
+.link--target {stroke: MediumSeaGreen ;}
+.link--source {stroke: SkyBlue        ;}
+
+
+
+
+#hierarchy .label {
+    font-size: 0.7rem;
+    fill: Gainsboro ;
+}
+
+/*tooltip*/
+.force-tip {
+     /*line-height: 1;*/
+     /*font-weight: bold;*/
+     font-size: 0.5rem;
+     padding: 6px;
+     background: rgba(0, 0, 0, 0.8);
+     color: #fff;
+     border-radius: 2px;
+ }
+
+.force-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    padding: 4px;
+    font-size: 0.5rem;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+.hierarchy-tip {
+    line-height: 1;
+    /*font-weight: bold;*/
+    font-size: 0.5rem;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 2px;
+}
+
+.hierarchy-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    padding: 4px;
+    font-size: 0.5rem;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.5);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+.pie-tip {
+    line-height: 1;
+    /*font-weight: bold;*/
+    font-size: 0.6rem;
+    padding: 6px;
+    background: #DDD;
+    color: #222;
+    border-radius: 2px;
+}
+
+.tooltipindex {
+    color: #d4d4d4;
+    font-weight: bold;
+}
+
+.chart-tip {
+    /*line-height: 1;*/
+    /*font-weight: bold;*/
+    font-size: 0.5rem;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+h7 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    font-size: 0.7rem;
+}
+
+h8 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    font-size: 0.5rem;
+}
+
+.circle{
+	background-color: #ff6e00;
+	:  #ff6e00;
+}
+
+#g_inf1,#g_inf2{
+	font-size: 1rem;
+	fill: Gainsboro;
+}
+
+/*---------------------*/
+section{
+      width: 100%;
+      height: 140%;
+      left: 0px;
+      right: 0px;
+      transition:3s;
+
+    }
+
+
+    .net-svg{
+      height:100%;
+      width: 100%;
+      margin-left: 0px;
+    }
+
+div.tooltipMap { jn
+	position: relative;     
+	text-align: center; 
+	display: inline-block;
+	padding-bottom: : 3px;       
+	font: 0.5rem sans-serif;    
+	background: gray; 
+	border: 0px;    
+	border-radius: 8px;     
+	pointer-events: none;  
+
+	}
+
+.legend{
+      fill: gray;
+      font-size: 12px;
+      border-left-width: 2px;
+      border-left-color: gray;
+    }
+
+   /*  calendar */
+    .calendar{
+      display: inline-block;
+      width:30%;
+      height: 4%;
+      bottom: :0px;
+      left:40%;
+      top:93%;
+      position: fixed;
+    }
+ 
+  .figure {
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    top:0px;
+    margin:10px;
+    margin-top:1px;
+    border-radius: 10px;  
+    position: relative; 
+  }
+  .figure header{
+      width: 30px;
+      height: 5px; 
+      position: absolute;
+      background-color: Beige;
+      border-radius: 10px 10px 0 0; 
+    }
+
+    
+   .figure section {
+      width: 30px;
+      height: 20px;
+      position: absolute;
+      top: 5px;
+      font: 10px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+      letter-spacing: -0.5px;
+      color: #b3b3b3;
+      text-align: center;
+      z-index: 10;
+      background-color:#333333;
+      border-radius: 0 0 10px 10px; 
+    }
+    .figure :hover {
+      background-color: #CC6600;
+    }
+
+    .footer{
+      font-family: "Helvetica Neue", sans-serif;
+      font-style: oblique;
+      color:DarkSalmon;
+      font-size: .7rem;
+      color:white;
+      position: fixed;
+      bottom: 5px;
+      left:75%;
+      width: 100%;
+    }
+
+    #svgLine{
+      top: :30%;
+
+    }
+
+    .chartTitle{
+      font-family: "Dosis", sans-serif;
+      color:DarkSalmon;
+      font-size: 1.5rem;
+    }

@@ -1,0 +1,190 @@
+.SmallSubTab{
+ 		width: 100%;
+ 		height: 8%;
+ 		font-size: 1.1em;
+ 		font-weight: bold;
+ 		text-align: center;
+ 		color:#FDF5E6;
+ 		margin-top:2px;
+ 		opacity: 0.7;
+ 	}
+ 	.selection{
+ 		text-align: center;
+ 		width: 100%;
+ 		height: 5%;
+ 		color: #C8C8C8;
+		
+ 	}
+ 	select{
+ 		width: 90%;
+ 		padding-left: 5%;
+ 		margin-left: 5%;
+ 		margin-right: 5%;
+ 		bottom: 5%;
+		font-family: 'Dosis', sans-serif;
+		background: #333;
+  		border-radius: 20px;
+		color:#696969;
+ 		font-size: 10px;
+ 		text-align: center;
+ 		border-color: transparent;
+ 		appearance: none;
+ 		-moz-appearance: none;
+	    -webkit-appearance: none;
+ 	}
+ 	.M_select{
+		border-left-color: #ff6e00;
+		border-right-color: #ff6e00;
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+		background-color: #ffffff06;
+		
+ 	}
+
+ 	.M_select:focus {
+		background-color:#272727;
+		color:	#9ab;
+		outline:0;
+ 	}
+
+ 	option{
+ 		width: 60%;
+		background-color: #272727;
+		text-align: center;
+		color:	#9ab;
+		font-size: 0.8em;
+		font-family: 'Dosis', sans-serif;
+		outline: 0;
+ 	}
+
+ 	.BigSubTab{
+ 		width: 100%;
+ 		height: 20%;
+ 		background-color: #ffffff06;
+ 		top: 0;
+ 		left: 0;
+ 		position: relative;
+ 	}
+ 	.subTitle{
+ 		width: 7%;
+ 		height: 99%;
+ 		top:0;
+ 		left: 1%;
+ 		position: absolute;
+ 		text-align: center;
+ 		background-color: #333;
+ 		border-bottom: 1px solid rgb(255, 110, 0,0.5);
+ 		
+ 	}
+ 	.subTitle h4{
+ 		transform: rotate(90deg);
+ 		text-align: center;
+ 		font-size: 0.7em;
+ 		color: 	#808080;
+ 	}
+ 	.f_tab{
+ 		width: 90%;
+ 		height: 99%;
+ 		top:0;
+ 		left: 10%;
+ 		position: absolute;
+ 		border-bottom: 1px solid rgb(105,105,105,0.3);
+ 		background-clip: padding-box;
+ 	}
+ 	.FieldOne{
+ 		width: 100%;
+ 		height: 50%;
+ 		top:10%;
+ 		position: absolute;
+ 	}
+ 	.FieldTwo{
+ 		width: 100%;
+ 		height: 50%;
+ 		bottom: 0;
+ 		position: absolute;
+ 	}
+
+ 	.f_value {
+ 		position: relative;
+  		background: #333;
+  		border-radius: 20px;
+  		padding-left: 10%;
+  		padding-top: 2%;
+  		padding-right: 0px;
+  		font-family: Dosis;
+
+	    font-size: 8px;
+  		width: 80%;
+  		height: 25%;
+  		left: 5%;
+	}
+
+	.O_select{
+  		background: #333;
+  		border-radius: 20px;
+	}
+
+	.f_title{
+		font-size: 10px;
+		color:#808080;
+		width: 18%;
+		padding-top:1%;
+		padding-left:2%;
+
+	}
+
+	.switch {
+  		width: 100%;
+  		height: 100%;
+	}
+	.switch:before {
+	  content: '  ';
+	  position: absolute;
+	  left: 0;
+	  z-index: -1;
+	  width: 80%;
+  	  height: 90%;
+	  background:#333;
+	}
+	.switch__label {
+	  display: inline-block;
+	  width: 30%;
+	  text-align: center;
+	  cursor: pointer;
+	  transition: color 200ms ease-out;
+	  color:DarkGray;
+	}
+	.switch__label:hover {
+	  color: white;
+	}
+	.switch__indicator{
+	  width: 0.5rem;
+	  height: 0.5rem;
+	  position: absolute;
+	  top: 0.2rem;
+	  left: 0;
+	  background: DimGray;
+	  border-radius: 50%;
+	  transition: transform 2s cubic-bezier(0.02, 0.94, 0.09, 0.97), background 2s cubic-bezier(0.17, 0.67, 0.14, 1.03);
+	  transform: translate3d(6rem, 0, 0);
+	}
+	#F:checked ~ .switch__indicator {
+	  background: Coral     ;
+	  transform: translate3d(0.5rem, 0, 0);
+	}
+	#M:checked ~ .switch__indicator {
+	  background: CornflowerBlue   ;
+	  transform: translate3d(3.6rem, 0, 0);
+	}
+	#B:checked ~ .switch__indicator {
+	  background:DimGray;
+	  transform: translate3d(6.0rem, 0, 0);
+	}
+	.switch:not(:checked), .switch:checked {
+	  display: none;
+	}
+
+	.label2{
+		width: 40%;
+	}
+

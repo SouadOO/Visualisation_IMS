@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+  <link rel="stylesheet" type="text/css" href="css/filter.css">
+  <title>International Migration Stock</title>
+
+ 
+ <!-- <script src="https://d3js.org/d3.v4.js"></script>-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"></script>
+  <link   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+    
+  
+  <script src="./js/filterBar.js"></script>
+  <script src="./js/tip.js"></script>
+  <script src="./js/geopoint.js"></script>
+  
+  
+<body id="page-top">
+
+  <!-- Header -->
+    <Header class="Header" id="MyHeader">
+
+      <!-- Page titel -->
+      <div class="Title">
+        <div id="BigTitle">International Migration Stock</div>
+        <div id="SmallTitle">Visualization</div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="Menu"style="--items: 3;">
+        <a href="visualization.html"    >MAP</a>
+        <a href="network.html">NETWORK</a>
+        <a href="information.html"   >DATA</a>
+        <span class="line"     ></span>
+      </nav>
+
+      <!-- Search field -->
+      <div class='Search' >
+            <form action="">
+              <input type="search" id="Search" onkeyup="SearchActive();">
+              <i class="fa fa-search"  onclick="Search();"></i>
+              <ul id="myUL" >
+              </ul>
+            </form>
+      </div>
+    </Header>
+
+  <!-- Network Section -->
+    <section id="network-page" class="net-page">
+
+
+      <!--Filter part-->
+      <div class="Filter" id="FilterNav"> 
+
+        <div class="SmallSubTab">Filter By</div>
+
+        <div class="BigSubTab">
+          <div class=subTitle><h4>Demographic</h4></div>
+          <div class=f_tab>
+            <div class="FieldOne">
+              <span class="f_title" id="G_Gender">Gender</span>
+              <div class="f_value">
+                    <input name="gender" class="switch" id="F" type="radio" onclick="changeGender(this.id)" checked />
+                    <label for="F" class="switch__label" >Female</label>
+                    <input name="gender" class="switch" id="M" onclick="changeGender(this.id)" type="radio"  />
+                    <label for="M" class="switch__label">Male</label>
+                    <input name="gender" class="switch" id="B" onclick="changeGender(this.id)" type="radio" />
+                    <label for="B" class="switch__label" >Both</label>
+                    <div class="switch__indicator"  /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="BigSubTab">
+          <div class=subTitle> <h4>Other</h4></div>
+          <div class=f_tab>
+            <div class="FieldOne">
+              <span class="f_title">Filter</span>
+              <select onchange="changeFilter(this.options[this.selectedIndex].value)">
+                  <option value="GEO" selected>Geographical filter</option>
+                  <option value="DEV">Developement filter</option>
+                  <option value="INC">Income filter</option>
+                  <option value="SSA">Sub-Sahara-area filter</option>
+                </select>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="leftButton">        
+                    <i class="fa fa-filter" id="filtrage" onclick="openFilter()"></i>
+      </div>
+      
+      <!--Network Part-->
+      <div  id="hierarchy">   
+      </div>
+      
+      
+
+      <!--Calendar Part-->
+      <div  class="calendar" >
+            <figure class="figure" id="0" onclick="changeYear(this.id);" >
+                  <header style="background-color:#B8860B;"></header><section ><script>document.write('1990');</script> </section></figure>
+            <figure class="figure" id="1" onclick="changeYear(this.id);">
+                  <header ></header><section ><script>document.write('1995');</script> </section></figure> 
+            <figure class="figure" id="2" onclick="changeYear(this.id);">
+                  <header ></header><section ><script>document.write('2000');</script> </section></figure>
+            <figure class="figure" id="3" onclick="changeYear(this.id);">
+              <header ></header><section ><script>document.write('2005');</script> </section></figure> 
+            <figure class="figure" id="4" onclick="changeYear(this.id);">
+                  <header ></header><section ><script>document.write('2010');</script> </section></figure>
+            <figure class="figure" id="5" onclick="changeYear(this.id);">
+                  <header ></header><section ><script>document.write('2015');</script> </section></figure> 
+            <figure class="figure" id="6" onclick="changeYear(this.id);">
+                  <header ></header><section ><script>document.write('2017');</script> </section></figure> 
+      </div>
+
+    </section>
+
+  <!-- Footer Sectio -->
+    <footer class="footer">
+      <h6> Made by : BOUTANE Souad and Larbi TOUIJAR - DATA VISUALIZATION- UNIGE -2019 </h6>
+    </footer>
+
+ <script src="./js/hierarchy.js"></script>
+</body>
+</html>
