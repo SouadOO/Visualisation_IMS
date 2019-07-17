@@ -572,11 +572,11 @@ function coloriseArcs(d){
                 else if(FILTER=="DEV"){
                         leg = d3.scaleOrdinal()
                                 .domain(["More developed regions","Less developed regions"])
-                                .range([ "#916a08","#cc6600"]);}
+                                .range(["#916a08","#cc6600"]);}
                 else if(FILTER=="INC")      {
                         leg = d3.scaleOrdinal()
                                 .domain(["High-income regions","Middle-income regions","Lower-income regions"])
-                                .range([ "#916a08","#cc6600","#ffbf80"]);}
+                                .range(["#916a08","#cc6600","#ffbf80"]);}
                 else{
                         leg = d3.scaleOrdinal()
                                 .domain(["SSA","not SSA"])
@@ -598,15 +598,15 @@ function coloriseArcs(d){
                 else if(FILTER=="DEV"){
                         leg = d3.scaleOrdinal()
                                 .domain(["More developed regions","Less developed regions"])
-                                .range([ "#4d2600","#cc6600"]);}
+                                .range([ "#916a08","#cc6600"]);}
                 else if(FILTER=="INC")      {
                         leg = d3.scaleOrdinal()
                                 .domain(["High-income regions","Middle-income regions","Lower-income regions"])
-                                .range([ "#4d2600","#cc6600","#ffbf80"]);}
+                                .range([  "#916a08","#cc6600","#ffbf80"]);}
                 else{
                         leg = d3.scaleOrdinal()
                                 .domain(["SSA","not SSA"])
-                                .range([ "#4d2600","#cc6600"]);}
+                                .range([  "#916a08","#cc6600"]);}
 
                 legendArc = d3.legendColor()
                     .shape("path", d3.symbol().type(d3.symbolSquare).size(42)())
