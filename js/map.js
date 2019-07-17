@@ -284,7 +284,7 @@ function drawMap(world) {
 
                       
             switch (SUB_FILTER){
-              case "COUNTRY"   : name=d3.select(this)._groups[0][0].__data__.properties.name_long ; break;
+              case "COUNTRY"   : name=d3.select(this)._groups[0][0].__data__.properties.name_long.toUpperCase() ; break;
               case "MAJOR-AREA": name=d3.select(this)._groups[0][0].__data__.properties.continent ; break;
               case "AREA"      : name=d3.select(this)._groups[0][0].__data__.properties.subregion ; break;
               case "ALLR"      : name=d3.select(this)._groups[0][0].__data__.properties.economy   ;
@@ -314,6 +314,7 @@ function drawMap(world) {
               value="NA";
               percentage="NA";
             }
+
             
             map_tip.show(name,value,percentage);
 
@@ -460,7 +461,6 @@ function UpdateMap(data){
     
    
 
-    
     //Scale
     l=d3.keys(data).length;
     x=Math.min(l,10);
