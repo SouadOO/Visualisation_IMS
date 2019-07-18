@@ -54,6 +54,7 @@ function changeYear(v){
   document.getElementsByTagName("header")[OLD_y].style.backgroundColor="Beige";
   OLD_y=parseInt(v)+1;
 
+
   //Extract data
     C_DATA=extractMetric();
     MAX=sum(d3.values(C_DATA));
@@ -76,7 +77,7 @@ function changefilterMetric(v){
         GENDER="F";
     }
 
-    //Extract data
+        //Extract data
     C_DATA=extractMetric();
     MAX=sum(d3.values(C_DATA));
 
@@ -309,12 +310,25 @@ function drawMap(world) {
             value=C_DATA[name];
             percentage=(value/MAX).toFixed(2);
 
+
+            if (METRIC=="TP"){
+              value=value*1000;
+            }
+
+                
+
             //for undifined value
             if(typeof(value)!=="number"){
               value="NA";
               percentage="NA";
             }
 
+            if (METRIC=="IMS_TP"  || METRIC=="IMS_DISTRIBUTION"){
+              percentage=value.toFixed(2);
+              value="--";
+            }else{
+              percentage=percentage*100;
+            }
             
             map_tip.show(name,value,percentage);
 
