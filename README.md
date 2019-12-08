@@ -1,4 +1,4 @@
-# Visualisation_IMS
+# IMS_Visualisation
 
 In this project we could create a visual representation of a large database, starting by analyzing the project and answering tree main questions:
 
