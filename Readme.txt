@@ -2,9 +2,9 @@
 
 In this project we could create a visual representation of a large database, starting by analyzing the project and answering tree main questions:
 
-- What to show data abstraction.
-- Why to show task abstraction
-- Hows how the idiom visual encoding and interaction. 
+- What? to show data abstraction.
+- Why? to show task abstraction
+- Hows? how the idiom visual encoding and interaction. 
 
 Then we preprocess the data by transforming it to a specific format (json, graph), and finally implementing the visual encoding idiom and 
 interaction idiom.
