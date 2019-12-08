@@ -21,6 +21,6 @@ JavaScript, D3 version 5, HTML, CSS, python.
 
 ### Results
 
-<img src="img/map.png">
+<img src="img/Map.png">
 
 <img src="img/graph.png">
